@@ -14,7 +14,7 @@ export async function seed(knex: Knex): Promise<void> {
         return {
             id: index + 1,
             title: faker.lorem.paragraph(1),
-            description: faker.lorem.paragraph(5),
+            description: faker.lorem.paragraph(8),
             published_date: faker.date.past(),
             author_id: author.id,
         };
