@@ -1,4 +1,7 @@
-import type { Knex } from "knex";
+import dotenv from "dotenv";
+dotenv.config();
+
+import { Knex } from "knex";
 
 const environments: string[] = ["development", "staging", "production"];
 
@@ -19,11 +22,11 @@ const commonConfig: Knex.Config = {
     migrations: {
         tableName: "_migrations",
         directory: "database/migrations",
-        loadExtensions: [".ts"],
+        // loadExtensions: [".ts"],
     },
     seeds: {
         directory: "database/seeds",
-        loadExtensions: [".ts"],
+        // loadExtensions: [".ts"],
     },
 };
 

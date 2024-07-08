@@ -2,6 +2,6 @@
 
 make:migrate: tsx ./node_modules/.bin/knex migrate:make --knexfile src/knexfile.ts -x ts
 make:seed: tsx ./node_modules/.bin/knex seed:make --knexfile src/knexfile.ts -x ts
-migrate:latest: tsx ./node_modules/.bin/knex migrate:latest --knexfile src/knexfile.ts -x ts
-migrate:rollback: tsx ./node_modules/.bin/knex migrate:rollback --knexfile src/knexfile.ts -x ts
-seed:run: tsx ./node_modules/.bin/knex seed:run --knexfile src/knexfile.ts -x ts
+migrate:latest: env $(cat .env | xargs) tsx ./node_modules/.bin/knex migrate:latest --knexfile src/knexfile.ts
+migrate:rollback: env $(cat .env | xargs) tsx ./node_modules/.bin/knex migrate:rollback --knexfile src/knexfile.ts
+seed:run: env $(cat .env | xargs) tsx ./node_modules/.bin/knex seed:run --knexfile src/knexfile.ts
