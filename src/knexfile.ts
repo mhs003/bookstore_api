@@ -22,11 +22,11 @@ const commonConfig: Knex.Config = {
     migrations: {
         tableName: "_migrations",
         directory: "database/migrations",
-        // loadExtensions: [".ts"],
+        loadExtensions: [".ts", ".js"],
     },
     seeds: {
         directory: "database/seeds",
-        // loadExtensions: [".ts"],
+        loadExtensions: [".ts", ".js"],
     },
 };
 
