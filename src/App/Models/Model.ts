@@ -22,7 +22,7 @@ export class Model {
         return this.table;
     }
 
-    public static async create<Payload, Result>(
+    public static async insert<Payload, Result>(
         data: Payload
     ): ResponseType<Result> {
         const [result] = await this.table.insert(data).returning("*");
